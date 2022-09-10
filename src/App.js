@@ -6,18 +6,18 @@ import Login from './Login';
 import Register from './Register';
 import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
+import Protected, {} from './Protected';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header/>
-        <h1>Ecomm project</h1>
         <Routes>
           <Route path="login" element={<Login/>}/>
           <Route path="register" element={<Register/>}/>
-          <Route path="add" element={<AddProduct/>}/>
-          <Route path="update" element={<UpdateProduct/>}/>
+
+          <Route path="add" element={<Protected component={AddProduct}/>}/>
+          <Route path="update" element={<Protected component={UpdateProduct}/>}/>
         </Routes>
       </BrowserRouter>
     </div>
